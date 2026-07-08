@@ -8,140 +8,375 @@ font-family:'Vazirmatn',sans-serif;
 }
 
 body{
-background:linear-gradient(180deg,#eef7ff,#f7f3ff);
+
+background:linear-gradient(180deg,#edf9ff,#fff3fb,#f4f2ff);
+
 min-height:100vh;
+
+direction:rtl;
+
+overflow-x:hidden;
+
 display:flex;
+
 justify-content:center;
-align-items:center;
+
 padding:30px 15px;
-color:#222;
+
+position:relative;
+
+}
+
+/* حباب های پس زمینه */
+
+.bg1,.bg2,.bg3{
+
+position:fixed;
+
+border-radius:50%;
+
+filter:blur(90px);
+
+z-index:-2;
+
+}
+
+.bg1{
+
+width:250px;
+
+height:250px;
+
+background:#ffd9ea;
+
+top:-80px;
+
+right:-80px;
+
+}
+
+.bg2{
+
+width:280px;
+
+height:280px;
+
+background:#d7f4ff;
+
+bottom:-120px;
+
+left:-100px;
+
+}
+
+.bg3{
+
+width:180px;
+
+height:180px;
+
+background:#efe0ff;
+
+top:45%;
+
+left:40%;
+
 }
 
 .container{
+
 width:100%;
-max-width:480px;
+
+max-width:460px;
+
 }
 
 .card{
-background:#fff;
-border-radius:30px;
-padding:30px 22px;
-box-shadow:0 15px 45px rgba(0,0,0,.12);
-text-align:center;
-animation:fadeIn .8s ease;
+
+background:rgba(255,255,255,.72);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.45);
+
+border-radius:35px;
+
+padding:28px;
+
+box-shadow:0 25px 60px rgba(0,0,0,.12);
+
+animation:fade .8s ease;
+
+}.logo{
+
+width:220px;
+
+display:block;
+
+margin:0 auto 15px;
+
+filter:drop-shadow(0 10px 20px rgba(0,0,0,.12));
+
+animation:float 4s ease-in-out infinite;
+
 }
 
-.logo{
-width:180px;
-max-width:100%;
-display:block;
-margin:0 auto 20px;
+@keyframes float{
+
+0%{transform:translateY(0);}
+
+50%{transform:translateY(-10px);}
+
+100%{transform:translateY(0);}
+
 }
 
 h1{
-font-size:38px;
+
+text-align:center;
+
+font-size:42px;
+
 font-weight:800;
-margin-bottom:8px;
+
+color:#444;
+
+margin-top:10px;
+
 }
 
 .subtitle{
+
+text-align:center;
+
+color:#777;
+
 font-size:18px;
-color:#666;
-margin-bottom:28px;
+
+margin:12px 0.info-card{
+
+margin-top:24px;
+
+background:rgba(255,255,255,.88);
+
+border-radius:24px;
+
+padding:22px;
+
+box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+border:1px solid rgba(255,255,255,.7);
+
 }
 
-.btn{
+.info-card h2{
+
 display:flex;
+
 align-items:center;
-justify-content:center;
+
 gap:10px;
-text-decoration:none;
-background:linear-gradient(135deg,#73c7ff,#58aceb);
-color:#111;.info{
-margin-top:30px;
-text-align:right;
-border-top:1px solid #eee;
-padding-top:25px;
+
+font-size:22px;
+
+color:#444;
+
+margin-bottom:16px;
+
 }
 
-.info h2{
-font-size:24px;
-margin-bottom:12px;
-font-weight:800;
-color:#222;
+.info-card h2 i{
+
+color:#ff82b2;
+
+font-size:22px;
+
 }
 
-.info p{
-font-size:17px;
+.info-card p{
+
+font-size:16px;
+
 line-height:2.1;
-color:#555;
-margin-bottom:28px;
+
+color:#666;
+
 }
 
 .footer{
-margin-top:25px;
+
+margin-top:30px;
+
 text-align:center;
-font-size:15px;
+
+font-size:16px;
+
+font-weight:700;
+
 color:#888;
+
+padding-top:20px;
+
+border-top:1px dashed #e5e5e5;
+
 }
 
-.badge{
-display:inline-block;
-background:#f3f8ff;
-color:#4a7fcf;
-padding:8px 18px;
-border-radius:30px;
-font-size:14px;
-font-weight:@keyframes fadeIn{
-from{
-opacity:0;
-transform:translateY(25px);
+.btn:nth-child(1){
+
+background:linear-gradient(135deg,#d7fff4,#b7f7ea);
+
 }
-to{
+
+.btn:nth-child(2){
+
+background:linear-gradient(135deg,#d8ecff,#b7dcff);
+
+}
+
+.btn:nth-child(3){
+
+background:linear-gradient(135deg,#ffe1f0,#ffd1ea);
+
+}
+
+.btn:nth-child(4),
+.btn:nth-child(5),
+.btn:nth-child(6){
+
+background:linear-gradient(135deg,#efe6ff,#ddd0ff);
+
+}
+
+.btn:nth-child(7){
+
+background:linear-gradient(135deg,#fff8cf,#ffe69c);
+
+}/* ===== انیمیشن ورود ===== */
+
+@keyframes fade{
+
+0%{
+opacity:0;
+transform:translateY(30px);
+}
+
+100%{
 opacity:1;
 transform:translateY(0);
 }
+
 }
 
-body::before{
+/* ===== افکت دکمه ها ===== */
+
+.btn{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.btn::before{
+
 content:"";
-position:fixed;
-top:-120px;
-left:-120px;
-width:260px;
-height:260px;
-background:#ffd6e8;
-border-radius:50%;
-filter:blur(90px);
-z-index:-1;
+
+position:absolute;
+
+top:0;
+
+left:-120%;
+
+width:70%;
+
+height:100%;
+
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.7),
+transparent
+);
+
+transform:skewX(-25deg);
+
+transition:.8s;
+
 }
 
-body::after{
-content:"";
-position:fixed;
-bottom:-120px;
-right:-120px;
-width:260px;
-height:260px;
-background:#cfeeff;
-border-radius:50%;
-filter:blur(90px);
-z-index:-1;
+.btn:hover::before{
+
+left:160%;
+
 }
 
-@media(max-width:480px){
+/* ===== لوگو ===== */
+
+.logo{
+
+transition:.4s;
+
+cursor:pointer;
+
+}
+
+.logo:hover{
+
+transform:scale(1.06) rotate(-2deg);
+
+}
+
+/* ===== کارت ها ===== */
+
+.info-card{
+
+transition:.35s;
+
+}
+
+.info-card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 18px 35px rgba(0,0,0,.12);
+
+}
+
+/* ===== اسکرول ===== */
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+/* ===== انتخاب متن ===== */
+
+::selection{
+
+background:#8fd7ff;
+
+color:#fff;
+
+}/* ===== بخش ۵ - پایان فایل ===== */
+
+@media (max-width:480px){
+
+body{
+padding:20px 12px;
+}
 
 .card{
 padding:22px 18px;
-border-radius:22px;
+border-radius:28px;
 }
 
 .logo{
-width:150px;
+width:170px;
 }
 
 h1{
-font-size:32px;
+font-size:34px;
 }
 
 .subtitle{
@@ -149,26 +384,137 @@ font-size:16px;
 }
 
 .btn{
-font-size:17px;
 padding:16px;
+font-size:17px;
+border-radius:18px;
 }
 
-.info h2{
+.btn i{
 font-size:20px;
 }
 
-.info p{
+.info-card{
+padding:18px;
+}
+
+.info-card h2{
+font-size:19px;
+}
+
+.info-card p{
 font-size:15px;
-line-height:1.9;
+line-height:2;
+}
+
+.footer{
+font-size:14px;
 }
 
 }
 
-html{
-scroll-behavior:smooth;
+@media (min-width:481px){
+
+.card{
+max-width:460px;
+margin:auto;
 }
 
-::selection{
-background:#69c6ff;
-color:#fff;
+}
+
+body::before{
+
+content:"☁️";
+
+position:fixed;
+
+top:50px;
+
+left:40px;
+
+font-size:50px;
+
+opacity:.20;
+
+animation:cloud1 12s infinite linear;
+
+pointer-events:none;
+
+}
+
+body::after{
+
+content:"☁️";
+
+position:fixed;
+
+bottom:80px;
+
+right:30px;
+
+font-size:70px;
+
+opacity:.18;
+
+animation:cloud2 15s infinite linear;
+
+pointer-events:none;
+
+}
+
+@keyframes cloud1{
+
+0%{
+transform:translateX(-30px);
+}
+
+50%{
+transform:translateX(20px);
+}
+
+100%{
+transform:translateX(-30px);
+}
+
+}
+
+@keyframes cloud2{
+
+0%{
+transform:translateX(20px);
+}
+
+50%{
+transform:translateX(-25px);
+}
+
+100%{
+transform:translateX(20px);
+}
+
+}
+
+.logo:active{
+transform:scale(.95);
+}
+
+.btn:active{
+transform:scale(.97);
+}
+
+.footer::after{
+
+content:"";
+
+display:block;
+
+width:70px;
+
+height:4px;
+
+background:linear-gradient(90deg,#8fd7ff,#ffb7d5);
+
+margin:12px auto 0;
+
+border-radius:20px;
+
 }
