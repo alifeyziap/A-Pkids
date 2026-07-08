@@ -1,8 +1,3 @@
-/* ===================================
-   A&P Kids
-   Style Part 1
-=================================== */
-
 *{
 margin:0;
 padding:0;
@@ -12,15 +7,13 @@ font-family:'Vazirmatn',sans-serif;
 
 body{
 
-background:linear-gradient(180deg,#fffdfd,#fff5fb,#eefcff);
-
-min-height:100vh;
+background:linear-gradient(135deg,#fff7fb,#eef9ff);
 
 overflow-x:hidden;
 
 padding:20px;
 
-position:relative;
+color:#222;
 
 }
 
@@ -30,103 +23,47 @@ position:fixed;
 
 inset:0;
 
-pointer-events:none;
-
-z-index:-10;
-
 background:
 
-radial-gradient(circle at 20% 20%,#ffdcec 0%,transparent 30%),
+radial-gradient(circle at 20% 20%,rgba(255,180,220,.35),transparent 35%),
 
-radial-gradient(circle at 80% 25%,#d8fff5 0%,transparent 28%),
+radial-gradient(circle at 80% 25%,rgba(180,255,245,.35),transparent 35%),
 
-radial-gradient(circle at 50% 80%,#ddd5ff 0%,transparent 35%);
+radial-gradient(circle at 50% 90%,rgba(215,200,255,.35),transparent 40%);
 
-}
-
-/* ابرها */
-
-.background::before{
-
-content:"";
-
-position:absolute;
-
-left:-120px;
-
-bottom:-60px;
-
-width:320px;
-
-height:220px;
-
-background:white;
-
-border-radius:120px;
-
-box-shadow:
-
-120px -20px 0 30px white,
-
-240px 20px 0 0 white;
-
-filter:blur(2px);
-
-opacity:.9;
+z-index:-2;
 
 }
 
-.background::after{
+.container{
 
-content:"";
-
-position:absolute;
-
-right:-80px;
-
-top:180px;
-
-width:240px;
-
-height:170px;
-
-background:white;
-
-border-radius:120px;
-
-box-shadow:
-
-80px 20px 0 white,
-
--80px 10px 0 white;
-
-opacity:.85;
-
-}
-
-.page{
-
-max-width:960px;
+max-width:980px;
 
 margin:auto;
 
-background:rgba(255,255,255,.58);
+}
+
+.card{
+
+position:relative;
+
+background:rgba(255,255,255,.82);
 
 backdrop-filter:blur(20px);
 
-border-radius:34px;
+border-radius:40px;
 
 padding:28px;
 
 box-shadow:
 
-0 18px 60px rgba(0,0,0,.08);
+0 20px 60px rgba(180,160,220,.25);
 
-border:1px solid rgba(255,255,255,.6);
+overflow:hidden;
 
 }
 
-header{
+.top-buttons{
 
 display:flex;
 
@@ -138,39 +75,19 @@ margin-bottom:20px;
 
 }
 
-.menu,
+.menu-btn,
 
-.city{
+.location-btn{
 
-width:56px;
-
-height:56px;
-
-background:white;
+background:#fff;
 
 border-radius:20px;
 
-display:flex;
+padding:14px 20px;
 
-align-items:center;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
 
-justify-content:center;
-
-box-shadow:0 8px 25px rgba(0,0,0,.08);
-
-font-size:22px;
-
-}
-
-.city{
-
-width:auto;
-
-padding:0 18px;
-
-gap:8px;
-
-font-size:16px;
+font-weight:700;
 
 }
 
@@ -178,43 +95,35 @@ font-size:16px;
 
 text-align:center;
 
+margin-bottom:30px;
+
 }
 
 .logo{
 
-width:320px;
+width:420px;
 
-max-width:100%;
+max-width:90%;
 
-filter:drop-shadow(0 20px 40px rgba(0,0,0,.12));
+display:block;
 
-animation:float 5s ease-in-out infinite;
-
-}
-
-@keyframes float{
-
-0%{transform:translateY(0);}
-50%{transform:translateY(-10px);}
-100%{transform:translateY(0);}
+margin:auto;
 
 }
 
 .hero h1{
 
-font-size:52px;
+font-size:54px;
 
-font-weight:900;
+font-weight:800;
 
-margin-top:12px;
-
-color:#444;
+margin-top:18px;
 
 }
 
 .hero h1 span{
 
-background:linear-gradient(90deg,#8fded6,#ff9ccf,#a697ff);
+background:linear-gradient(90deg,#bd8cff,#7ed7e9,#ff9bc5);
 
 -webkit-background-clip:text;
 
@@ -224,47 +133,31 @@ background:linear-gradient(90deg,#8fded6,#ff9ccf,#a697ff);
 
 .hero p{
 
-margin-top:12px;
+margin-top:15px;
 
-font-size:22px;
+font-size:25px;
 
-color:#666;
+color:#555;
 
-}
-
-.heart{
-
-font-size:30px;
-
-margin-top:10px;
-
-color:#ff8cbc;
-
-animation:pulse 2s infinite;
-
-}
-
-@keyframes pulse{
-
-50%{transform:scale(1.2);}
-
-}/* ==========================
-   Link Cards
+}/*==========================
+      LINK CARDS
 ==========================*/
 
 .links{
 
-margin-top:45px;
+display:grid;
 
-display:flex;
+grid-template-columns:1fr 1fr;
 
-flex-direction:column;
+gap:20px;
 
-gap:18px;
+margin-top:35px;
 
 }
 
-.link-card{
+.item{
+
+text-decoration:none;
 
 display:flex;
 
@@ -272,45 +165,35 @@ align-items:center;
 
 justify-content:space-between;
 
-padding:18px 20px;
+padding:20px;
 
-border-radius:24px;
-
-text-decoration:none;
-
-color:#333;
-
-background:#fff;
-
-box-shadow:0 12px 35px rgba(0,0,0,.08);
+border-radius:28px;
 
 transition:.35s;
 
-}
+color:#333;
 
-.link-card:hover{
+box-shadow:
 
-transform:translateY(-5px);
-
-box-shadow:0 18px 40px rgba(0,0,0,.12);
+0 15px 35px rgba(0,0,0,.08);
 
 }
 
-.link-left{
+.item:hover{
 
-display:flex;
+transform:translateY(-6px);
 
-align-items:center;
+box-shadow:
 
-gap:18px;
+0 25px 45px rgba(0,0,0,.12);
 
 }
 
-.icon-box{
+.icon{
 
-width:72px;
+width:70px;
 
-height:72px;
+height:70px;
 
 border-radius:22px;
 
@@ -318,39 +201,51 @@ background:#fff;
 
 display:flex;
 
-justify-content:center;
-
 align-items:center;
 
-font-size:34px;
+justify-content:center;
 
-box-shadow:0 8px 20px rgba(0,0,0,.08);
+font-size:30px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+flex-shrink:0;
 
 }
 
-.link-title{
+.text{
 
-font-size:28px;
+flex:1;
+
+margin-right:18px;
+
+}
+
+.text h3{
+
+font-size:24px;
+
+margin-bottom:8px;
 
 font-weight:800;
 
-margin-bottom:4px;
-
 }
 
-.link-sub{
+.text span{
 
-font-size:16px;
+font-size:15px;
 
-color:#555;
+color:#666;
+
+line-height:1.8;
 
 }
 
 .arrow{
 
-width:58px;
+width:48px;
 
-height:58px;
+height:48px;
 
 border-radius:50%;
 
@@ -358,60 +253,548 @@ background:#fff;
 
 display:flex;
 
-justify-content:center;
-
 align-items:center;
 
-font-size:22px;
+justify-content:center;
+
+font-size:18px;
 
 box-shadow:0 8px 20px rgba(0,0,0,.08);
 
 }
 
-.rubika-card{
+/* رنگ کارت‌ها */
 
-background:linear-gradient(90deg,#bff5e9,#d5fff6);
+.rubika{
 
-}
-
-.telegram-card{
-
-background:linear-gradient(90deg,#d6ecff,#c8e5ff);
+background:linear-gradient(135deg,#d9fff1,#bdf5df);
 
 }
 
-.instagram-card{
+.telegram{
 
-background:linear-gradient(90deg,#ffe2ef,#ffd6e9);
-
-}
-
-.phone-card{
-
-background:linear-gradient(90deg,#eadbff,#dccbff);
+background:linear-gradient(135deg,#dcefff,#c8e4ff);
 
 }
 
-.rubika-card .icon-box{
+.instagram{
 
-color:#39c784;
-
-}
-
-.telegram-card .icon-box{
-
-color:#27a5e7;
+background:linear-gradient(135deg,#ffe3ef,#ffd1e5);
 
 }
 
-.instagram-card .icon-box{
+.phone{
 
-color:#e1306c;
+background:linear/*==========================
+      INFO BOX
+==========================*/
+
+.info-box{
+
+margin-top:35px;
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:20px;
 
 }
 
-.phone-card .icon-box{
+.info{
 
-color:#9b59d0;
+background:#fff;
+
+border-radius:28px;
+
+padding:24px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.info h2{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+margin-bottom:20px;
+
+font-size:22px;
+
+color:#444;
+
+}
+
+.info h2 i{
+
+width:46px;
+
+height:46px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:14px;
+
+background:linear-gradient(135deg,#ffe1f0,#dff5ff);
+
+color:#7b4cff;
+
+}
+
+.row{
+
+display:flex;
+
+justify-content:space-between;
+
+padding:12px 0;
+
+border-bottom:1px dashed #ececec;
+
+font-size:16px;
+
+}
+
+.row:last-child{
+
+border:none;
+
+}
+
+.contact-item{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+padding:14px 0;
+
+border-bottom:1px dashed #ececec;
+
+font-size:16px;
+
+}
+
+.contact-item:last-child{
+
+border:none;
+
+}
+
+.contact-item i{
+
+color:#7b4cff;
+
+width:24px;
+
+text-align:center;
+
+}
+
+/*==========================
+      BUTTONS
+==========================*/
+
+.buttons{
+
+display:flex;
+
+gap:18px;
+
+margin-top:30px;
+
+}
+
+.btn{
+
+flex:1;
+
+height:62px;
+
+border-radius:22px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:12px;
+
+text-decoration:none;
+
+font-size:18px;
+
+font-weight:700;
+
+color:#fff;
+
+transition:.35s;
+
+}
+
+.btn:hover{
+
+transform:translateY(-4px);
+
+}
+
+.whatsapp{
+
+background:linear-gradient(135deg,#29d76b,#13b95a);
+
+box-shadow:0 15px 35px rgba(41,215,107,.35);
+
+}
+
+.call{
+
+background:linear-gradient(135deg,#7a63ff,#9a7bff);
+
+box-shadow:0 15px 35px rgba(122,99,255,.35);
+
+}
+
+/*==========================
+      FOOTER
+==========================*/
+
+.footer{
+
+margin-top:40px;
+
+text-align:center;
+
+padding-top:25px;
+
+border-top:1px solid #eee;
+
+}
+
+.footer p{
+
+font-size:18px;
+
+font-weight:700;
+
+margin-bottom:8px;
+
+color:#555;
+
+}
+
+.footer span{
+
+color:#999;
+
+font-size:14px;
+
+}/*==========================
+      CLOUDS & DECORATION
+==========================*/
+
+.card::before{
+
+content:"";
+
+position:absolute;
+
+top:-80px;
+
+left:-80px;
+
+width:220px;
+
+height:220px;
+
+border-radius:50%;
+
+background:radial-gradient(circle,#ffffff,#ffffff00 70%);
+
+opacity:.85;
+
+}
+
+.card::after{
+
+content:"";
+
+position:absolute;
+
+bottom:-100px;
+
+right:-80px;
+
+width:260px;
+
+height:260px;
+
+border-radius:50%;
+
+background:radial-gradient(circle,#dff8ff,#ffffff00 70%);
+
+opacity:.9;
+
+}
+
+.hero{
+
+position:relative;
+
+overflow:visible;
+
+}
+
+.hero::before{
+
+content:"☁";
+
+position:absolute;
+
+top:-10px;
+
+left:5%;
+
+font-size:90px;
+
+opacity:.18;
+
+animation:cloud1 10s linear infinite;
+
+}
+
+.hero::after{
+
+content:"☁";
+
+position:absolute;
+
+right:8%;
+
+top:30px;
+
+font-size:70px;
+
+opacity:.16;
+
+animation:cloud2 14s linear infinite;
+
+}
+
+@keyframes cloud1{
+
+0%{
+
+transform:translateX(-20px);
+
+}
+
+50%{
+
+transform:translateX(25px);
+
+}
+
+100%{
+
+transform:translateX(-20px);
+
+}
+
+}
+
+@keyframes cloud2{
+
+0%{
+
+transform:translateX(20px);
+
+}
+
+50%{
+
+transform:translateX(-20px);
+
+}
+
+100%{
+
+transform:translateX(20px);
+
+}
+
+}
+
+/* ستاره ها */
+
+body:before{
+
+content:"✨";
+
+position:fixed;
+
+left:40px;
+
+top:180px;
+
+font-size:28px;
+
+animation:twinkle 4s infinite;
+
+opacity:.5;
+
+}
+
+body:after{
+
+content:"⭐";
+
+position:fixed;
+
+right:45px;
+
+bottom:180px;
+
+font-size:30px;
+
+animation:twinkle 5s infinite;
+
+opacity:.45;
+
+}
+
+@keyframes twinkle{
+
+0%{
+
+transform:scale(.8) rotate(0deg);
+
+opacity:.2;
+
+}
+
+50%{
+
+transform:scale(1.2) rotate(20deg);
+
+opacity:.8;
+
+}
+
+100%{
+
+transform:scale(.8) rotate(0deg);
+
+opacity:.2;
+
+}
+
+}
+
+/*==========================
+      RESPONSIVE
+==========================*/
+
+@media(max-width:900px){
+
+.links{
+
+grid-template-columns:1fr;
+
+}
+
+.info-box{
+
+grid-template-columns:1fr;
+
+}
+
+.buttons{
+
+flex-direction:column;
+
+}
+
+.hero h1{
+
+font-size:40px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+}
+
+.logo{
+
+width:280px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+body{
+
+padding:12px;
+
+}
+
+.card{
+
+padding:18px;
+
+border-radius:28px;
+
+}
+
+.item{
+
+padding:16px;
+
+}
+
+.icon{
+
+width:56px;
+
+height:56px;
+
+font-size:24px;
+
+}
+
+.text h3{
+
+font-size:19px;
+
+}
+
+.text span{
+
+font-size:13px;
+
+}
+
+.btn{
+
+height:56px;
+
+font-size:16px;
+
+}
 
 }
