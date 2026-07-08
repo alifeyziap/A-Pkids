@@ -1,9 +1,7 @@
-/* ===========================
+/* ===================================
    A&P Kids
-   Part 1 / 5
-=========================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&display=swap');
+   Style Part 1
+=================================== */
 
 *{
 margin:0;
@@ -12,646 +10,408 @@ box-sizing:border-box;
 font-family:'Vazirmatn',sans-serif;
 }
 
-html{
-scroll-behavior:smooth;
-}
-
 body{
+
+background:linear-gradient(180deg,#fffdfd,#fff5fb,#eefcff);
 
 min-height:100vh;
 
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-padding:40px 18px;
-
-direction:rtl;
-
 overflow-x:hidden;
 
-background:linear-gradient(
-180deg,
-#fffdfd 0%,
-#fef4f8 45%,
-#eefcff 100%
-);
+padding:20px;
 
 position:relative;
 
 }
 
-/* ابرهای پس زمینه */
-
-.bg1,
-.bg2,
-.bg3{
+.background{
 
 position:fixed;
 
-border-radius:50%;
+inset:0;
 
-filter:blur(70px);
+pointer-events:none;
 
-z-index:-3;
+z-index:-10;
 
-animation:float 12s ease-in-out infinite;
+background:
+
+radial-gradient(circle at 20% 20%,#ffdcec 0%,transparent 30%),
+
+radial-gradient(circle at 80% 25%,#d8fff5 0%,transparent 28%),
+
+radial-gradient(circle at 50% 80%,#ddd5ff 0%,transparent 35%);
 
 }
 
-.bg1{
+/* ابرها */
+
+.background::before{
+
+content:"";
+
+position:absolute;
+
+left:-120px;
+
+bottom:-60px;
 
 width:320px;
 
-height:320px;
+height:220px;
 
-background:#ffd9ec;
+background:white;
 
-top:-80px;
+border-radius:120px;
+
+box-shadow:
+
+120px -20px 0 30px white,
+
+240px 20px 0 0 white;
+
+filter:blur(2px);
+
+opacity:.9;
+
+}
+
+.background::after{
+
+content:"";
+
+position:absolute;
 
 right:-80px;
 
+top:180px;
+
+width:240px;
+
+height:170px;
+
+background:white;
+
+border-radius:120px;
+
+box-shadow:
+
+80px 20px 0 white,
+
+-80px 10px 0 white;
+
+opacity:.85;
+
 }
 
-.bg2{
+.page{
 
-width:260px;
+max-width:960px;
 
-height:260px;
+margin:auto;
 
-background:#cffff0;
+background:rgba(255,255,255,.58);
 
-bottom:-70px;
+backdrop-filter:blur(20px);
 
-left:-70px;
+border-radius:34px;
 
-animation-delay:2s;
+padding:28px;
+
+box-shadow:
+
+0 18px 60px rgba(0,0,0,.08);
+
+border:1px solid rgba(255,255,255,.6);
 
 }
 
-.bg3{
+header{
 
-width:220px;
+display:flex;
 
-height:220px;
+justify-content:space-between;
 
-background:#dcd3ff;
+align-items:center;
 
-top:45%;
+margin-bottom:20px;
 
-left:50%;
+}
 
-transform:translate(-50%,-50%);
+.menu,
 
-animation-delay:4s;
+.city{
+
+width:56px;
+
+height:56px;
+
+background:white;
+
+border-radius:20px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+font-size:22px;
+
+}
+
+.city{
+
+width:auto;
+
+padding:0 18px;
+
+gap:8px;
+
+font-size:16px;
+
+}
+
+.hero{
+
+text-align:center;
+
+}
+
+.logo{
+
+width:320px;
+
+max-width:100%;
+
+filter:drop-shadow(0 20px 40px rgba(0,0,0,.12));
+
+animation:float 5s ease-in-out infinite;
 
 }
 
 @keyframes float{
 
-0%{
-
-transform:translateY(0px);
-
-}
-
-50%{
-
-transform:translateY(-20px);
+0%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0);}
 
 }
 
-100%{
+.hero h1{
 
-transform:translateY(0px);
-
-}
-
-}
-
-.container{
-
-width:100%;
-
-max-width:430px;
-
-}
-
-.glass{
-
-background:rgba(255,255,255,.72);
-
-backdrop-filter:blur(18px);
-
-border-radius:34px;
-
-padding:30px;
-
-box-shadow:
-
-0 20px 55px rgba(0,0,0,.08),
-
-0 0 0 1px rgba(255,255,255,.6);
-
-border:1px solid rgba(255,255,255,.6);
-
-animation:show .8s ease;
-
-}
-
-@keyframes show{
-
-from{
-
-opacity:0;
-
-transform:translateY(40px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}/* ===========================
-   A&P Kids
-   Part 2 / 5
-===========================*/
-
-.logoBox{
-
-display:flex;
-
-justify-content:center;
-
-margin-top:-10px;
-
-margin-bottom:18px;
-
-}
-
-.logo{
-
-width:220px;
-
-max-width:100%;
-
-transition:.5s;
-
-filter:drop-shadow(0 18px 30px rgba(255,182,210,.35));
-
-animation:logoFloat 4s ease-in-out infinite;
-
-}
-
-@keyframes logoFloat{
-
-0%{
-transform:translateY(0px);
-}
-
-50%{
-transform:translateY(-10px);
-}
-
-100%{
-transform:translateY(0px);
-}
-
-}
-
-h1{
-
-text-align:center;
-
-font-size:42px;
+font-size:52px;
 
 font-weight:900;
 
-color:#5b4b6b;
+margin-top:12px;
 
-letter-spacing:.5px;
-
-margin-top:8px;
+color:#444;
 
 }
 
-.subtitle{
+.hero h1 span{
 
-text-align:center;
+background:linear-gradient(90deg,#8fded6,#ff9ccf,#a697ff);
 
-font-size:18px;
+-webkit-background-clip:text;
 
-color:#8a8a8a;
-
-margin:10px 0 32px;
+-webkit-text-fill-color:transparent;
 
 }
 
-.buttons{
+.hero p{
+
+margin-top:12px;
+
+font-size:22px;
+
+color:#666;
+
+}
+
+.heart{
+
+font-size:30px;
+
+margin-top:10px;
+
+color:#ff8cbc;
+
+animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+50%{transform:scale(1.2);}
+
+}/* ==========================
+   Link Cards
+==========================*/
+
+.links{
+
+margin-top:45px;
 
 display:flex;
 
 flex-direction:column;
 
-gap:16px;
+gap:18px;
 
 }
 
-.btn{
-
-position:relative;
+.link-card{
 
 display:flex;
 
 align-items:center;
 
-justify-content:center;
+justify-content:space-between;
 
-gap:14px;
+padding:18px 20px;
 
-height:62px;
-
-border-radius:22px;
+border-radius:24px;
 
 text-decoration:none;
 
-font-size:18px;
+color:#333;
 
-font-weight:700;
+background:#fff;
 
-color:#444;
-
-overflow:hidden;
+box-shadow:0 12px 35px rgba(0,0,0,.08);
 
 transition:.35s;
 
-box-shadow:
+}
 
-0 12px 24px rgba(0,0,0,.08);
+.link-card:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 18px 40px rgba(0,0,0,.12);
 
 }
 
-.btn::before{
-
-content:"";
-
-position:absolute;
-
-left:-120%;
-
-top:0;
-
-width:80%;
-
-height:100%;
-
-background:
-
-linear-gradient(
-
-90deg,
-
-transparent,
-
-rgba(255,255,255,.8),
-
-transparent
-
-);
-
-transform:skewX(-25deg);
-
-transition:.8s;
-
-}
-
-.btn:hover::before{
-
-left:150%;
-
-}
-
-.btn:hover{
-
-transform:translateY(-4px);
-
-box-shadow/* ===========================
-   A&P Kids
-   Part 3 / 5
-===========================*/
-
-.info{
-
-margin-top:28px;
-
-padding:22px;
-
-border-radius:26px;
-
-background:rgba(255,255,255,.60);
-
-backdrop-filter:blur(18px);
-
-border:1px solid rgba(255,255,255,.55);
-
-box-shadow:0 12px 35px rgba(0,0,0,.06);
-
-}
-
-.info h2{
+.link-left{
 
 display:flex;
 
 align-items:center;
 
-gap:10px;
-
-font-size:22px;
-
-font-weight:800;
-
-color:#66507b;
-
-margin:20px 0 12px;
+gap:18px;
 
 }
 
-.info h2:first-child{
+.icon-box{
 
-margin-top:0;
+width:72px;
 
-}
+height:72px;
 
-.info h2 i{
+border-radius:22px;
 
-width:42px;
-
-height:42px;
-
-border-radius:50%;
+background:#fff;
 
 display:flex;
-
-align-items:center;
 
 justify-content:center;
 
-background:linear-gradient(135deg,#ffd8ea,#d8f1ff);
-
-color:#5d73ff;
-
-font-size:18px;
-
-box-shadow:0 8px 18px rgba(0,0,0,.08);
-
-}
-
-.info p{
-
-font-size:16px;
-
-line-height:2.1;
-
-color:#666;
-
-margin-bottom:12px;
-
-}
-
-/* فوتر */
-
-.footer{
-
-margin-top:28px;
-
-text-align:center;
-
-font-size:15px;
-
-font-weight:700;
-
-color:#999;
-
-letter-spacing:1px;
-
-}
-
-/* ستاره های پس زمینه */
-
-body::before{
-
-content:"⭐";
-
-position:fixed;
-
-top:90px;
-
-left:35px;
-
-font-size:30px;
-
-opacity:.25;
-
-animation:star1 7s ease-in-out infinite;
-
-pointer-events:none;
-
-}
-
-body::after{
-
-content:"✨";
-
-position:fixed;
-
-bottom:100px;
-
-right:35px;
+align-items:center;
 
 font-size:34px;
 
-opacity:.25;
-
-animation:star2 8s ease-in-out infinite;
-
-pointer-events:none;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
 
 }
 
-@keyframes star1{
+.link-title{
 
-0%{transform:translateY(0) rotate(0deg);}
+font-size:28px;
 
-50%{transform:translateY(-14px) rotate(15deg);}
+font-weight:800;
 
-100%{transform:translateY(0) rotate(0deg);}
-
-}
-
-@keyframes star2{
-
-0%{transform:translateY(0);}
-
-50%{transform:translateY(12px);}
-
-100%{transform:translateY(0);}
-
-}/* ===========================
-   A&P Kids
-   Part 4 / 5
-===========================*/
-
-.glass{
-
-position:relative;
-
-overflow:hidden;
+margin-bottom:4px;
 
 }
 
-.glass::before{
-
-content:"";
-
-position:absolute;
-
-top:-180px;
-
-right:-140px;
-
-width:320px;
-
-height:320px;
-
-background:radial-gradient(circle,
-rgba(255,210,235,.55),
-transparent 70%);
-
-pointer-events:none;
-
-}
-
-.glass::after{
-
-content:"";
-
-position:absolute;
-
-bottom:-170px;
-
-left:-150px;
-
-width:320px;
-
-height:320px;
-
-background:radial-gradient(circle,
-rgba(194,239,255,.60),
-transparent 70%);
-
-pointer-events:none;
-
-}
-
-.btn{
-
-border:1px solid rgba(255,255,255,.55);
-
-}
-
-.btn:active{
-
-transform:scale(.97);
-
-}
-
-.logo:hover{
-
-transform:scale(1.05) rotate(-3deg);
-
-}
-
-@media(max-width:480px){
-
-body{
-
-padding:22px 14px;
-
-}
-
-.glass{
-
-padding:22px;
-
-border-radius:28px;
-
-}
-
-.logo{
-
-width:170px;
-
-}
-
-h1{
-
-font-size:34px;
-
-}
-
-.subtitle{
+.link-sub{
 
 font-size:16px;
 
-}
-
-.btn{
-
-height:56px;
-
-font-size:16px;
+color:#555;
 
 }
 
-.info h2{
+.arrow{
 
-font-size:19px;
+width:58px;
+
+height:58px;
+
+border-radius:50%;
+
+background:#fff;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:22px;
+
+box-shadow:0 8px 20px rgba(0,0,0,.08);
 
 }
 
-.info p{
+.rubika-card{
 
-font-size:15px;
-
-line-height:2;
+background:linear-gradient(90deg,#bff5e9,#d5fff6);
 
 }
 
+.telegram-card{
+
+background:linear-gradient(90deg,#d6ecff,#c8e5ff);
+
 }
 
-.footer::after{
+.instagram-card{
 
-content:"";
+background:linear-gradient(90deg,#ffe2ef,#ffd6e9);
 
-display:block;
+}
 
-width:80px;
+.phone-card{
 
-height:5px;
+background:linear-gradient(90deg,#eadbff,#dccbff);
 
-margin:14px auto 0;
+}
 
-border-radius:50px;
+.rubika-card .icon-box{
 
-background:linear-gradient(90deg,
-#8fdcff,
-#ffc6df);
+color:#39c784;
+
+}
+
+.telegram-card .icon-box{
+
+color:#27a5e7;
+
+}
+
+.instagram-card .icon-box{
+
+color:#e1306c;
+
+}
+
+.phone-card .icon-box{
+
+color:#9b59d0;
 
 }
