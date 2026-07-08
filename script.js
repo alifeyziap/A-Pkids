@@ -1,31 +1,72 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded",()=>{
 
-const cards = document.querySelectorAll(".item");
+const cards=document.querySelectorAll(".item");
 
-cards.forEach((card, index) => {
+cards.forEach(card=>{
 
-card.style.opacity = "0";
-card.style.transform = "translateY(30px)";
+card.addEventListener("mouseenter",()=>{
 
-setTimeout(() => {
-card.style.transition = "0.5s ease";
-card.style.opacity = "1";
-card.style.transform = "translateY(0)";
-}, index * 150);
+card.style.transform="translateY(-6px) scale(1.02)";
 
 });
 
-const buttons = document.querySelectorAll(".btn");
+card.addEventListener("mouseleave",()=>{
 
-buttons.forEach(btn => {
+card.style.transform="translateY(0) scale(1)";
 
-btn.addEventListener("mouseenter", () => {
-btn.style.transform = "scale(1.05)";
 });
 
-btn.addEventListener("mouseleave", () => {
-btn.style.transform = "scale(1)";
+card.addEventListener("touchstart",()=>{
+
+card.style.transform="scale(.98)";
+
 });
+
+card.addEventListener("touchend",()=>{
+
+card.style.transform="scale(1)";
+
+});
+
+});
+
+const logo=document.querySelector(".logo");
+
+logo.animate([
+
+{
+opacity:0,
+transform:"translateY(-40px)"
+},
+
+{
+opacity:1,
+transform:"translateY(0)"
+}
+
+],{
+
+duration:900,
+fill:"forwards"
+
+});
+
+const hero=document.querySelector(".hero");
+
+hero.animate([
+
+{
+opacity:0
+},
+
+{
+opacity:1
+}
+
+],{
+
+duration:1200,
+fill:"forwards"
 
 });
 
