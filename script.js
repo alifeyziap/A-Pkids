@@ -1,11 +1,32 @@
+document.addEventListener("DOMContentLoaded", () => {
+
+const cards = document.querySelectorAll(".item");
+
+cards.forEach((card, index) => {
+
+card.style.opacity = "0";
+card.style.transform = "translateY(30px)";
+
+setTimeout(() => {
+card.style.transition = "0.5s ease";
+card.style.opacity = "1";
+card.style.transform = "translateY(0)";
+}, index * 150);
+
+});
+
 const buttons = document.querySelectorAll(".btn");
 
-buttons.forEach(button => {
-    button.addEventListener("click", function () {
-        this.style.transform = "scale(0.96)";
+buttons.forEach(btn => {
 
-        setTimeout(() => {
-            this.style.transform = "";
-        }, 150);
-    });
+btn.addEventListener("mouseenter", () => {
+btn.style.transform = "scale(1.05)";
+});
+
+btn.addEventListener("mouseleave", () => {
+btn.style.transform = "scale(1)";
+});
+
+});
+
 });
